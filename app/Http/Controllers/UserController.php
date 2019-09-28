@@ -97,7 +97,6 @@ class UserController extends Controller
         $token = $request->header('Authorization');
         $jwtAuth = new JWTAuth();
         $checktoken = $jwtAuth->checkToken($token);
-
         //Recoger datos por post
         $json = $request->input('json', null);
         $params_array = json_decode($json, true);
@@ -117,6 +116,7 @@ class UserController extends Controller
             unset($params_array['password']);
             unset($params_array['created_at']);
             unset($params_array['remember_token']);
+            unset($params_array['prop']);
             $user_update = User::where('id', $user->sub)->update(
                 $params_array
             );
