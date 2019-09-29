@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Helpers\JWTAuth;
+use Illuminate\Http\Response;
 
 class PostController extends Controller
 {
